@@ -1,0 +1,36 @@
+<div class="container py-5 h-100">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <h1>Lista mieszkań</h1>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%">Numer mieszkania</th>
+                                        <th style="width: 30%">Nazwa</th>
+                                        <th style="width: 30%">Numer budynku</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let flat of flats">
+                                        <td>{{flat.number}}</td>
+                                        <td>{{flat.name}}</td>
+                                        <td>{{flat.building.id}}</td>
+                                    </tr>
+                                    <tr *ngIf="!flats">
+                                        <td colspan="4" class="text-center">
+                                            <span class="spinner-border spinner-border-lg align-center"></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

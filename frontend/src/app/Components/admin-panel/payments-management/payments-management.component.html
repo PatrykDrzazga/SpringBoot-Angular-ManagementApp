@@ -1,0 +1,49 @@
+<div class="container py-5 h-100">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-body">
+						<div class="row">
+							<h1>Lista płatności</h1>
+							<div class="col-6">
+								<a routerLink="add" class="btn btn-success">Dodaj nową płatność</a>
+							</div>
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th style="width: 20%">Id płatności</th>
+										<th style="width: 20%">Kwota</th>
+										<th style="width: 20%">Opis</th>
+										<th style="width: 20%">Id mieszkania</th>
+										<th style="width: 20%">Płatnik</th>
+										<th style="width: 10%"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr *ngFor="let payment of payments">
+										<td>{{payment.id}}</td>
+										<td>{{payment.amount}}</td>
+										<td>{{payment.description}}</td>
+										<td>{{payment.flat.id}}</td>
+										<td>{{payment.user.firstName}} {{payment.user.lastName}}</td>
+										<td style="white-space: nowrap">
+											<button (click)="deletePayment(payment.id)" class="btn btn-sm btn-danger btn-delete-user">
+											<span>Usuń</span>
+											</button>
+										</td>
+									</tr>
+									<tr *ngIf="!payments">
+										<td colspan="4" class="text-center">
+											<span class="spinner-border spinner-border-lg align-center"></span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

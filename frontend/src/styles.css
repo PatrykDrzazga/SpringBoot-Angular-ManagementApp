@@ -1,0 +1,12 @@
+body {
+  background-color: #F4F7F5;
+}
+
+a { cursor: pointer }
+
+.btn-delete-user {
+    width: 40px;
+    text-align: center;
+    box-sizing: content-box;
+    margin-left: 5px;
+}

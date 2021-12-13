@@ -1,0 +1,38 @@
+<div class="container py-5 h-100">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-body">
+						<div class="row">
+							<h1>Lista opłat</h1>
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th style="width: 30%">Id mieszkania</th>
+										<th style="width: 30%">Kwota</th>
+										<th style="width: 30%">Opis</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr *ngFor="let payment of payments">
+										<td>{{payment.flat.id}}</td>
+										<td>{{payment.amount}}</td>
+										<td>{{payment.description}}</td>
+									</tr>
+									<tr *ngIf="!payments[0]">
+										<td colspan="4" class="text-center">
+											<div class="alert alert-warning" role="alert">
+												Brak dostępnych informacji na temat opłat!
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

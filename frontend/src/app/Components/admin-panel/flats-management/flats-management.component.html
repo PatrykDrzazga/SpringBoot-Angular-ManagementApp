@@ -1,0 +1,46 @@
+<div class="container py-5 h-100">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-body">
+						<div class="row">
+							<h1>Lista mieszkań</h1>
+							<div class="col-6">
+								<a routerLink="add" class="btn btn-success">Dodaj mieszkanie</a>
+							</div>
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th style="width: 30%">Numer mieszkania</th>
+										<th style="width: 30%">Nazwa</th>
+										<th style="width: 30%">Id budynku</th>
+										<th style="width: 10%"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr *ngFor="let flat of flats">
+										<td>{{flat.number}}</td>
+										<td>{{flat.name}}</td>
+										<td>{{flat.building.id}}</td>
+										<td style="white-space: nowrap">
+											<a routerLink="edit/{{flat.id}}" class="btn btn-sm btn-primary mr-1">Edytuj</a>
+											<button (click)="deleteFlat(flat.id)" class="btn btn-sm btn-danger btn-delete-user">
+											<span>Usuń</span>
+											</button>
+										</td>
+									</tr>
+									<tr *ngIf="!flats">
+										<td colspan="4" class="text-center">
+											<span class="spinner-border spinner-border-lg align-center"></span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
